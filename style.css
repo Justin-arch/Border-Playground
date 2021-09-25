@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.6em;
+}
+
+.border-grid {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #ffffff;
+}
+
+.border-grid div {
+  width: 22em;
+  height: 12em;
+  background: #000;
+  margin-left: 4.2em;
+}
+
+/* Animations */
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes antirotate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes viceversa {
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes semiviceversa {
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes vituoso {
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/* Border 1 */
+
+.border-grid .border-1 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-1::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(blue, blue), linear-gradient(red, red),
+    linear-gradient(green, green), linear-gradient(orange, orange);
+  animation: rotate 2s linear infinite;
+}
+
+.border-grid .border-1::after {
+  content: "Border 1";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  width: 10em;
+  height: 5em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 2 */
+
+.border-grid .border-2 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-2::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(#ffffff, #ffffff), linear-gradient(#000, #000),
+    linear-gradient(#ffffff, #ffffff);
+  animation: rotate 5s linear infinite;
+}
+
+.border-grid .border-2::after {
+  content: "Border 2";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  width: 10em;
+  height: 5em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 3 */
+
+.border-grid .border-3 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-3::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(violet, violet), linear-gradient(#eee, #eee),
+    linear-gradient(violet, violet), linear-gradient(#eee, #eee);
+  animation: viceversa 5s linear infinite;
+}
+
+.border-grid .border-3::after {
+  content: "Border 3";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  width: 10em;
+  height: 5em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 4 */
+
+.border-grid .border-4 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-4::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#333, #333), linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  animation: rotate 1s linear infinite;
+}
+
+.border-grid .border-4::after {
+  content: "Border 4";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  width: 10.6em;
+  height: 5.6em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 5 */
+
+.border-grid .border-5 {
+  overflow: hidden;
+  position: relative;
+  border: 1px #000 solid;
+  border-radius: 50%;
+}
+
+.border-grid .border-5::before {
+  content: "";
+  position: absolute;
+  top: -20em;
+  left: -35em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#000, #000), linear-gradient(red, red),
+    linear-gradient(#000, #000), linear-gradient(red, red);
+  animation: rotate 3s linear infinite;
+}
+
+.border-grid .border-5::after {
+  content: "Border 5";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.15em;
+  left: 0.15em;
+  width: 10.6em;
+  height: 5.6em;
+  background: #eee;
+  color: #222;
+  border-radius: 50%;
+}
+
+/* Border 6 */
+
+.border-grid .border-6 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-6::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(crimson, crimson),
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    linear-gradient(#fff, #fff);
+  animation: viceversa 3s linear infinite;
+}
+
+.border-grid .border-6::after {
+  content: "Border 6";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  width: 10.6em;
+  height: 5.6em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 7 */
+
+.border-grid .border-7 {
+  overflow: hidden;
+  position: relative;
+  border: 1px teal solid;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.border-grid .border-7::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(teal, teal), linear-gradient(#fff, #fff),
+    linear-gradient(teal, teal), linear-gradient(#fff, #fff);
+  animation: semiviceversa 2s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.border-grid .border-7::after {
+  content: "Border 7";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 9.6em;
+  height: 4.6em;
+  background: #eee;
+  color: #222;
+  border-radius: 100%;
+}
+
+/* Border 8 */
+
+.border-grid .border-8 {
+  overflow: hidden;
+  position: relative;
+}
+
+.border-grid .border-8::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(lime, lime), linear-gradient(#fff, #fff),
+    linear-gradient(lime, lime), linear-gradient(#fff, #fff);
+  animation: semiviceversa 5s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.border-grid .border-8::after {
+  content: "Border 8";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  width: 10.6em;
+  height: 5.6em;
+  background: #eee;
+  color: #222;
+}
+
+/* Border 9 */
+
+.border-grid .border-9 {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-grid .border-9::before {
+  content: "";
+  position: absolute;
+  top: -18em;
+  left: -33em;
+  width: 400%;
+  height: 400%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(orange, orange), linear-gradient(#333, #333),
+    linear-gradient(orange, orange), linear-gradient(#333, #333);
+  animation: vituoso 5s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.border-grid .border-9::after {
+  content: "Border 9";
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0.2em;
+  left: 0.2em;
+  width: 10.6em;
+  height: 5.6em;
+  background: #eee;
+  color: #222;
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+  .border-grid {
+    overflow: scroll;
+    grid-gap: 5em;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .border-grid div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .border-grid {
+    grid-template-columns: 1fr;
+  }
+}
